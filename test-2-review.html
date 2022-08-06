@@ -1,0 +1,271 @@
+<body>
+  <div>
+    Test #2 Review Notes
+
+1. Students may bring 1 page of notes to the exam:
+• 8 ½ X 11 (both Sides)
+• Typed or hand written
+• It may not be glued together
+2. Students may not bring:
+     Cell phones, iPods, PDA’s. etc.
+3. The test will consist of:
+• 20 multiple choice questions (60 Points)
+• 4 Problems (similar to homework) (40 Points)
+4. For SQL, you will need to be able to write:
+• CREATE TABLE statements
+• CREATE VIEW statements
+• SELECT statements
+• INSERT statements
+• DELETE statements
+• UPDATE statements
+
+
+Casteel Oracle 12c: SQL Text Chapters 10, 11 and 12
+
+Chapter 10 – Selected  Single Row Functions
+LOWER, UPPER & INITCAP
+ SUBSTR, INSTR, LENGTH, LPAD, RPAD, LTRIM, RTRIM, REPLACE, TRANSLATE & CONCAT
+ROUND, TRUNC, MOD, ABS, POWER
+MONTHS_BETWEEN, ADD_MONTHS, NEXT_DAY, LAST_DAY, TO_DATE, CURRENT_DATE & SYSDATE
+NVL, MVL2, NULLIF, TO_CHAR, DECODE, CASE, SOUNDEX & T0_NUMBER
+
+Chapter 11 – Group Functions
+SUM, AVG, COUNT, MAX, MIN
+Aggregate vs. Non-Aggregate attributes
+STDDEV, VARIANCE
+GROUPING SETS, CUBE, ROOLUP
+
+Chapter 12 – Subqueries 
+Applied in the WHERE, HAVING and SELECT clauses
+IN, ALL, ANY operators
+Nested Subqueries
+
+ 
+
+
+Coronel & Morris Text - Chapters 5, 6, 9, 10, 12
+
+Chapter 5 – Advanced Data Modeling
+
+1.Know the Extended Relationship Model - enhanced entity relationship model, is the result of adding more semantic constructs to the original entity relationship (ER) model.
+	1. Entry Super-types and Sub-types - an entity super type is a generic entity type that is related to one or more entity subtypes. The entity super type contains common characteristics, and the entity subtypes each contain their own unique characteristics.
+	2. Specialization Hierarchy - this depicts the arrangement of higher-level entity supertypes (parent entities) and lower-level entity subtypes (child entities).
+	3. Inheritance - this enables an entity subtype to inherit the attributes and relationships of the supertype. A super type contains attributes that are common to all of its subtypes.
+	4. Subtype discriminator - this is the attribute in the super type entity that determines to which subtype the supertype occurrence is related.
+	5. Disjoint and overlapping Constraints - disjoint is also known as non overlapping subtypes, these are subtypes that contain a unique subset of the super type entity set; in other words, each entity instance of the supetype can appear in only one of the subtypes. 
+	OVERLAPPING SUBTYPES - these are subtypes that contain non unique subsets of the supertype entity set; that is, each entity instance of the super type may appear in more than one subtype.
+	6. Completeness Constraints - specifies whether each entity super type occurrence must also be a member of at least one subtype.
+	7. Specialization - is the top-down process of identifying lower-level, more specific entity subtypes from a higher-level entity supertype. Specialization is based on grouping the unique characteristics and relationships of the subtypes.
+
+ Generalization - is the bottom-up process of identifying a higher-level, more generic entity super type from lower-level entity subtypes.
+
+2. Entity Clustering - this is a “virtual” entity type used to represent multiple entities and relationships in the ERD.
+3. Entity Integrity Selecting Primary Keys  
+	1. Natural keys - or natural identifier is a real-world, generally accepted identifier used to distinguish—that is, uniquely identify—real-world objects.
+Primary keys - a primary key is the attribute or combination of attributes  that uniquely identifies entity instances in an entity set.
+	2. Primary Key guidelines - First, you should understand the function of a primary key. Its main function is to uniquely identify an entity instance or row within a table. The function of the primary key is to guarantee entity integrity, not to “describe” the entity.Second, primary keys and foreign keys are used to implement relationships among entities. However, the implementation of such relationships is done mostly behind the scenes, hidden from end users. 
+	3. When to use Composite Primary Keys - they are particularly useful in two cases: as identifiers of composite entities, in which each primary key combination is allowed only once in the M:N relationship. Identifiers weak entities, in which the weak entity has a strong identifying relationship with the parent entity.
+	4. When to use Surrogate Primary Keys
+
+Chapter 6 – Normalization Techniques
+
+1. Know what the three types of modification anomalies are:
+Insert anomalies - just to complete a row definition, a new employee must be assigned to a project. If the employee is not yet assigned, a phantom project must be created to complete the employee data entry.
+Delete anomalies - suppose that only one employee is associated with a given project. If that employee leaves the company and the employee data are deleted, the project information will also be deleted. To prevent the loss of the project information, a fictitious employee must be created.
+Update anomalies - Modifying the JOB_CLASS for employee number 105 requires many potential alterations, one for each EMP_NUM = 105.
+2. Know what the following terminology means.
+Functional dependency
+Determinant
+Primary Key
+Foreign Key
+Candidate Key
+Partial dependency/Full functional dependency
+Transitive dependency
+Multi-valued dependency
+3. Know the different Normal forms and how they resolve different types of 
+    dependencies which cause anomalies.
+0 Normal Form – Data is not in Table form: It has no repeating groups.
+1st Normal Form – Data is in Table form: It has no repeating groups.
+2nd Normal Form – All partial dependencies are eliminated. That is, all non-key attributes are dependent on all of the primary keys. Formed by projecting the table onto 2 or more tables where the partial dependency is separated into a new table. 
+3rd Normal Form – All transitive dependencies are eliminated. Formed by projecting the table into 2 or more tables where the 2nd functional dependency in the transitive table is separated into a new table.
+BCNF – (Boyce-Codd Normal Form) – A variation of 3rd Normal Form. All determinants are either candidate or primary keys. Formed by projecting non-key determinants and the determined attributes into a new table.
+4th Normal Form – Eliminate multi-valued dependencies. Formed by not allowing 2 or more multi-valued attributes to be defined in the same table when they have the same determinant.
+4. Know what De-normalization is and why it is used.  Only reasonable purpose is to
+    improve performance.
+	(For the test – normalize to 3rd Normal Form (3NF))
+
+Chapter 9 – Database Design
+
+1. Know the Phases in the Database Life Cycle (the major steps)
+Database Initial Study
+Database Design – (Know the details of this step)
+Implementation and Loading
+Testing and Evaluation
+Operation
+Maintenance and Evolution
+2. Know the major steps in the Initial Study
+Analyze the company
+Define the problems and constraints
+Develop the database specification
+3. Know the major steps in Database Design
+Create the Conceptual Design (Independent of Hardware & Software)
+Gather information and requirements
+Develop business rules
+Develop the Entity-Relationship Diagram and attribute table.
+Select the DBMS software
+Translate the Conceptual Design into a Logical Design (Dependent on Software, Independent of Hardware).
+Define tables, Primary Keys and Foreign Keys.
+Normalize the tables.
+Code the CREATE TABLE and CREATE VIEW statements.
+Determine users and their rights (privileges) to the database.
+Develop the Physical Design (Dependent on the Hardware & Software)
+Decide how tables and indexes will be placed in disk storage.
+4. Know what is involved in Implementation and Loading.
+Create the tables
+Load the tables with data
+Tune the database for performance
+Implement security
+5. Know what is involved in Testing and Evaluation.
+Run applications against the Database
+Check for accuracy and performance
+6. Know what is involved in Operation.
+Use the database 
+Monitor the database
+7. Know what is involved in Maintenance and Evolution.
+Backup / Recovery
+Monitor and tune the database
+Periodically, check security
+Make minor changes as required
+8. Know the difference between Centralized and Decentralized Design.
+
+Chapter 10 – Transaction Management and Concurrency Control
+
+1. Know what a transaction is. 
+2. Know the SQL Transaction Control statements:
+COMMIT
+ROLLBACK
+3. Know the 4 properties of a Transaction and what they are. 
+Atomicity
+Durability
+Serializability
+Isolation
+4. Know the purpose of the Transaction Log.
+Keeps track of all transactions and actions that modify the database.
+Stores the BEFORE image and the AFTER image of each row that is modified.
+States whether the changes were committed or rolled back.
+5. Know what concurrency control is.
+6. Know the 3 types of problems due to lack of concurrency control. 
+Lost Update
+Two transactions attempt to update simultaneously
+The action of the 1st update is replaced by the action of the 2nd update, losing the results of the 1st update.
+Uncommitted Data
+The 1st transaction is an update; the 2nd transaction is either a read or an update.
+The 1st transaction reads and updates the data.
+The 2nd transaction reads the updated data
+The 1st transaction issues a ROLLBACK
+The 2nd transaction operates on the wrong data.
+Inconsistent retrievals
+The 1st transaction is an update; the 2nd transaction is a read.
+The 1st transaction and the second transaction read the original data.
+The 1st transaction updates and COMMITs the changes.
+The 2nd transaction has retrieved data which is no longer correct.
+7. Know what the different types of locks are.
+Binary Lock – historically no longer used. 
+Share Lock – (any number active at a time)
+Exclusive Lock – (only one at a time active)
+8. Know the different types of locking granularities
+Table
+Page
+Row
+Column
+
+
+9. Know what the 2-Phase locking scheme is.
+Growing Phase – Obtain Locks
+Shrinking Phase – Release Locks
+10. Know how deadlock occurs and is resolved.
+Occurs when 2 or more transactions block each other from obtaining exclusive locks. 
+Resolved in 1 of 3 ways:
+Deadlock Prevention
+Deadlock Detection – most common for Centralized Database Systems
+Deadlock Avoidance
+11. Backup / Recovery
+Checkpoint – A synchronization point for a database. All data modifications are written to disk and checkpoint entry is written in the transaction log. 
+Transaction recovery or ROLLBACK – uses the Transaction Log to restore either the BEFORE images or the AFTER images of changes.
+Software failure (Operating System or DBMS fails) 
+Starting with the most current transaction in the transaction log and working backwards to the last checkpoint, write all BEFORE images to disk.
+Starting at the last checkpoint and working forward, write all AFTER images for committed transactions to disk.
+Hardware failure (Disk Destroyed/Crash)
+Restore latest backup to disk.
+Starting with Transaction Log after the backup, write all AFTER images for committed transactions to disk. 
+
+Chapter 12 - Distributed Database Processing
+
+Know what Distributed Database Processing is – the execution of transactions and the retrieval and updating of data that occurs across 2 or more independent (an usually geographically separate) computer nodes.
+A Distributed Database is a database stored over several nodes
+A Distributed Database Management System DDBMS is a system that governs the storage and processing of Database Data over interconnected computer nodes in which the data and the processing is spread over several sites.
+Know what a Transaction Processor is (TP) – Controls Transactions
+Know what a Data Processor is (DP) – Processes Requests
+A Node in the network will be a TP, or a DP, or both.
+Know the difference between a Homogeneous DDBMS and a Heterogeneous DDBMS.
+
+Know the advantages of a DDBMS
+Data placed near primary end-users
+Faster data access
+More easily scaled to size
+Less danger of an overall system failure.
+
+Know the disadvantages of a DDBMS
+Potential for worse performance, particularly for data modifications.
+More complex and costly to develop and maintain
+More difficult to control
+Security is difficult to maintain
+Lack of ANS standards with respect to DDBMS.
+
+Know the primary system components of a DDBMS
+Hardware – can include a variety of mainframe, mini, and microcomputers.
+Software – can be various products that can be interfaced.
+Data – DDB can be fully, partially, or non-replicated. Tables may be fragmented by row or column or mixed. Requires a database catalog at each node to track the fragments, replicates and their locations.
+
+Know the 6 goals of a DDBMS:
+Distribution Transparency: Transaction does not need to Know:
+That the data is partitioned
+That the data can be replicated at several sites
+The data location.
+Transaction Transparency: Allow a transaction to update data at several sites. Ensures the transaction will be completed entirely or aborted, maintaining data integrity.
+Failure Transparency: Ensures that the system will continue to operate in the event of a node failure. Functions of that node will be picked up by the other nodes. 
+Performance Transparency: Allows the system to perform as efficiently as a centralized DBMS.
+Heterogeneous Transparency: Allows the integration of different hardware platforms and software DBMSs into the DDBMS.
+Single Node Dependence: The distributed system should not rely on a single node in order to function correctly.
+
+Know how a DDBMS supports Distributed Concurrency Control for Transaction Transparency.
+Anomalies – Same as before for centralized D/B processing.
+Conflicting requests exist when two operations reference the same data-item and at least one is a write transaction.
+Commitment in a Distributed System.
+Difficult because several DP nodes may require updates for a single transaction. Therefore, all DP nodes must be able to apply changes or none of them can.
+Two-Phase Commit
+TP Issues a pre-commit action to all affected DPs.
+Each DP replies that it can or cannot commit the update.
+If the TP receives any NOs, it issues an UNDO (ROLLBACK) action. 
+If all relies are YES, the TP issues a DO (COMMIT) action.
+All DPs must acknowledge completion to the controlling TP. 
+  DO – UNDO – REDO
+Used to perform the actions in the two-phased commit
+  Deadlock may still occur.  Harder to detect and eliminate due to the number of nodes involved.
+Timestamping is an alternative
+Locking is still the primary method used.
+
+Know how a DDBMS supports Failure transparency
+Each node must keep its own log files and copy of the data dictionary.
+Backup and Recovery is done at each node.
+
+Know what Data Partitioning is.
+Horizontal Fragmentation
+Vertical Fragmentation
+Mixed Fragmentation
+
+Know what Data Replication is. 
+Know C.J. Date’s 12 Commandments for Distributed Databases
+
+  </div>
+</body>
